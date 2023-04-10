@@ -16,7 +16,7 @@ const SignupForm = () => {
   const [showAlert, setShowAlert] = useState(false);
 
   // Function to "SIGNUP" returned by UseMutation hook
-  const (signup) = useMutation (SIGNUP);
+  const [signup] = useMutation (SIGNUP);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -111,5 +111,6 @@ const SignupForm = () => {
     </>
   );
 };
+
 
 export default SignupForm;
