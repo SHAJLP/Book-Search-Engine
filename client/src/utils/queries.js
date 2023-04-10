@@ -1,4 +1,4 @@
-import {gql} from "appolo/client";
+import {gql} from "@appolo/client";
 
 export const Me = gql`
 query Query{
@@ -6,7 +6,7 @@ query Query{
         id
         username
         email
-        bookcount
+        bookCount
         savedBooks{
             authors
             description
