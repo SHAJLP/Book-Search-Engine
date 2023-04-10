@@ -22,7 +22,7 @@ mutation Mutation ($input; SaveBookInput!) {
         id
         username
         email
-        bookcount
+        bookCount
         savedBooks{
             authors
             description
@@ -40,7 +40,7 @@ mutation Mutation ($bookId: String!) {
         id
         username
         email
-        bookcount
+        bookCount
         savedBooks{
             authors
             description
