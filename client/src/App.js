@@ -1,23 +1,22 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import SearchBooks from './pages/SearchBooks';
-import SavedBooks from './pages/SavedBooks';
-import Navbar from './components/Navbar';
-//import appolloprovider
-import { appolloClient,
-InMemeoryCache,
-AppolloProvider,
-createHttpLink,
-}from "@appollo/client";
-import {setContext} from "@appollo/client/link/context";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  createHttpLink,
+} from "@apollo/client";
+import { setContext } from "@apollo/client/link/context";
 
-//middleware that will attach JWT token to every request
+import SearchBooks from "./pages/SearchBooks";
+import SavedBooks from "./pages/SavedBooks";
+import Navbar from "./components/Navbar";
+
 const link = createHttpLink({
   uri: process.env.REACT_APP_GRAPHQL || "/graphql",
   credentials: "same-origin",
 });
 
-// authlink middleware prior to making a request to Graphql API
 const authLink = setContext((_, { headers }) => {
   const token = localStorage.getItem("id_token");
 

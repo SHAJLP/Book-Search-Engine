@@ -1,18 +1,23 @@
-import React, { useState, useEffect } from 'react';
-import {useMutations, useQuery} from "@appollo/client";
-import { Jumbotron, Container, CardColumns, Card, Button } from 'react-bootstrap';
+import { useMutation, useQuery } from "@apollo/client";
+import React from "react";
+import {
+  Jumbotron,
+  Container,
+  CardColumns,
+  Card,
+  Button,
+} from "react-bootstrap";
+import { REMOVE_BOOK } from "../graphql/mutations";
+import { ME } from "../graphql/queries";
 
-import { ME } from '../gql/queries';
-import { REMOVE_BOOK } from '../gql/mutations';
-import Auth from '../utils/auth';
-import { removeBookId } from '../utils/localStorage';
+import Auth from "../utils/auth";
+import { removeBookId } from "../utils/localStorage";
 
 const SavedBooks = () => {
-  const {loading, data} = useQuery (ME);
-  const [removeBook] =useMutation (REMOVE_BOOK);
+  const { data, loading } = useQuery(ME);
+  const [removeBook] = useMutation(REMOVE_BOOK);
 
-
-  // use this to determine if `useEffect()` hook needs to run again
+  // create function that accepts the book's mongo _id value as param and deletes the book from the database
   const handleDeleteBook = async (bookId) => {
     const token = Auth.loggedIn() ? Auth.getToken() : null;
 
@@ -29,7 +34,7 @@ const SavedBooks = () => {
     }
   };
 
-  // Advise if data is not present
+  // if data isn't here yet, say so
   if (loading) {
     return <h2>LOADING...</h2>;
   }
