@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import {useMutations, useQuery} from "@appollo/client";
 import { Jumbotron, Container, CardColumns, Card, Button } from 'react-bootstrap';
 
-import { ME } from '../utils/queries';
-import { REMOVE_BOOK } from '../utils/mutations';
+import { ME } from '../gql/queries';
+import { REMOVE_BOOK } from '../gql/mutations';
 import Auth from '../utils/auth';
 import { removeBookId } from '../utils/localStorage';
 
