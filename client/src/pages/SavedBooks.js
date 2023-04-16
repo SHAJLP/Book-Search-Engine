@@ -7,8 +7,8 @@ import {
   Card,
   Button,
 } from "react-bootstrap";
-import { REMOVE_BOOK } from "../schema/mutations";
-import { ME } from "../schema/queries";
+import { REMOVE_BOOK } from "../graphql/mutations";
+import { ME } from "../graphql/queries";
 
 import Auth from "../utils/auth";
 import { removeBookId } from "../utils/localStorage";

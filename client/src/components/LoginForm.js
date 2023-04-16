@@ -5,7 +5,7 @@ import { useMutation } from "@apollo/client";
 
 import Auth from "../utils/auth";
 
-import { LOGIN } from "../schema/mutations";
+import { LOGIN } from "../graphql/mutations";
 
 const LoginForm = () => {
   const [userFormData, setUserFormData] = useState({ email: "", password: "" });
