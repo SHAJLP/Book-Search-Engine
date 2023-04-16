@@ -13,7 +13,7 @@ import SavedBooks from "./pages/SavedBooks";
 import Navbar from "./components/Navbar";
 
 const link = createHttpLink({
-  uri: process.env.REACT_APP_GRAPHQL || "/graphql",
+  uri: process.env.REACT_APP_GRAPHQL || "/schema",
   credentials: "same-origin",
 });
 
